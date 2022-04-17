@@ -57,4 +57,18 @@ Usually RepositoryImpl goes with some arguments to access Web & Database, but I 
 We follow a code style recommended by Google & Kotlin, but extended by RedMadRobotTeam:
 https://github.com/RedMadRobot/kotlin-style-guide#readme
 
+<h2>Work with Git</h2>
 
+In order to accomplish your task, it's required to make all changes on a separated branch and merge it into the develop branch. 
+
+Every merge request should contain less than 300 changed lines.
+
+What you should do step by step after receiving a new task:<br/>
+
+1. Checkout local dev branch and pull remote changes.
+2. Create your own branch ANDI-number (the number of current task).
+3. Make commits and push them into remote repository (new remote branch with same name ANDI-number will be created).
+4. On GitHub make a new MR (merge request) ANDI-number -> dev. Set your teammates as Reviewers and set the tech lead as Assignee.
+5. Wait until pipelines successfully finish and then ask your teammates to review your merge request. 
+6. Get 2 approves from your Reviewers. If there is a comment left on Github, first of all you should ensure it's correct, otherwise discuss it with a reviewer who left that arguable comment. Make changes to fix those commented parts of code and send your MR to review again. Afterward, when you get 2 approves, send approve request to the tech lead.
+7. After the tech lead's approve, you can safely merge your branch into dev.
