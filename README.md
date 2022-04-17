@@ -40,22 +40,21 @@ We create a component, add some modules and connect them to that component. So w
 It's the most common structure for that tech stack (MVVM + Clean + Dagger 2):
 
     RepositoryImpl (Class)
-          |
-          ∨
+          ↓
     IRepository (Interface)
-          |
-          ∨
+          ↓
     UseCase(repo: IRepository)
-          |
-          ∨
+          ↓
     ViewModel(useCase: UseCase)
-          |
-          ∨
+          ↓
     Fragment(without constructors, injections happen inside)
 
 As you see above, when we try to inject a ViewModel inside a Fragment, Dagger uses ViewModel(useCase: UseCase) constructor. It means that Dagger needs a UseCase object to create that ViewModel. Dagger searches UseCase creation and finds UseCase(repo: IRepository) constructor. It searches further and finds how to implement that interface with RepositoryImpl object.
 Usually RepositoryImpl goes with some arguments to access Web & Database, but I skip it to show you the main idea of DI. So when Dagger finds out how to implement that IRepository, we can create UseCase -> we can create ViewModel -> we can inject that ViewModel inside the Fragment. 
 
+<h2>Code Style</h2>
 
+We follow a code style recommended by Google & Kotlin, but extended by RedMadRobotTeam:
+https://github.com/RedMadRobot/kotlin-style-guide#readme
 
 
